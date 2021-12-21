@@ -1,0 +1,1836 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import "reset.css";
+@mixin contDivider {
+	width: 100%;
+	height: 32px;
+	background-color: #fafafa;
+}
+
+@keyframes clittering {
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(0.9);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+}
+@keyframes deposit {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes scaleUp {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.2);
+	}
+}
+$mobile: "screen and (max-width:768px)";
+// &:hover{
+//    background-color: #f8e57bc3;
+// }
+
+#wrap {
+	font-family: 'Noto Sans KR', sans-serif;
+
+	@media #{$mobile} {
+		width: 100%;
+		margin: 0;
+	}
+
+	// header
+	> header {
+		position: fixed;
+		width: 100%;
+		height: 80px;
+		background-color: #fff;
+		border-bottom: 1px solid #dcdcdc;
+		z-index: 1000;
+		@media #{$mobile} {
+			border: none;
+			background-color: #ffef6b;
+		}
+
+		#wrap-header {
+			position: relative;
+			width: 1080px;
+			height: 80px;
+			margin: 0 auto;
+			@media #{$mobile} {
+				width: 100%;
+			}
+
+			> h1.logo {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				margin-top: -15px;
+				width: 116px;
+				z-index: 1000;
+				@media #{$mobile} {
+					position: absolute;
+					left: 20px;
+					z-index: 1000;
+				}
+				> a {
+					display: block;
+					width: 100%;
+					height: 20px;
+				}
+			}
+
+			.gnb_btn {
+				display: none;
+				@media #{$mobile} {
+					display: block;
+					position: absolute;
+					right: 30px;
+					top: 20px;
+					width: 30px;
+					height: 30px;
+					text-indent: -9999px;
+					span {
+						display: block;
+						width: 30px;
+						height: 2px;
+						background-color: #000;
+						margin-top: 8px;
+					}
+				}
+			}
+			.mob {
+				display: none;
+				@media #{$mobile} {
+					width: 100%;
+					height: 100%;
+					position: fixed;
+					top: 0;
+					z-index: 900;
+					padding: 0 20px;
+					overflow: scroll;
+					z-index: 1000;
+					font-size: 14px;
+				}
+				> .nav-header {
+					position: relative;
+					@media #{$mobile} {
+						position: fixed;
+						top: 0;
+						left: 0;
+						right: 0;
+						padding: 0 24px;
+						background: rgba(255, 255, 255, 0);
+						text-align: right;
+						overflow: hidden;
+						height: 60px;
+						line-height: 60px;
+						z-index: 1;
+						background: rgba(255, 255, 255, 1);
+					}
+					> .logo {
+						display: none;
+						@media #{$mobile} {
+							display: block;
+							position: absolute;
+							top: 29px;
+							left: 20px;
+							z-index: 1000;
+						}
+						> img {
+							display: block;
+							width: 116;
+							height: 20;
+						}
+					}
+					> .clse {
+						display: none;
+						@media #{$mobile} {
+							position: absolute;
+							right: 24px;
+							top: 0;
+							bottom: 0;
+							margin: auto;
+							width: 24px;
+							height: 24px;
+							display: inline-block;
+							vertical-align: middle;
+							> img {
+								display: block;
+								width: 25px;
+							}
+						}
+					}
+				}
+				> .gnb_mob {
+					display: none;
+					@media #{$mobile} {
+						display: block;
+					}
+					margin-top: 70px;
+					> li {
+						position: relative;
+						width: 95%;
+						height: 70px;
+						line-height: 70px;
+						font-size: 17px;
+						border-bottom: 1px solid #dcdcdc;
+						transition: all .4s;
+						&:hover {
+							background-color: #f8e57bc3;
+						}
+						&.list-group {
+							height: auto;
+							display: block;
+							> .list-item {
+								line-height: 70px;
+								position: relative;
+								> a {
+									font-size: 17px;
+									height: 100%;
+									display: inline-block;
+									width: 100%;
+								}
+								button {
+									background: none;
+									border: 0;
+									outline: 0;
+									display: block;
+									text-indent: -9999px;
+									position: absolute;
+									display: block;
+									width: 40px;
+									height: 20px;
+									background-image: url(./../images/img_kabang_171010.png);
+									background-position: 120px 0;
+									right: 0;
+									top: 30px;
+
+									cursor: pointer;
+									&.on {
+										background-position: 120px -20px;
+									}
+								}
+							}
+							> .list-contents {
+								display: none;
+								border-top: 1px solid #ededed;
+								border-bottom: 1px solid #ededed;
+								> .list-content {
+									background: #f7f7f7;
+									padding: 24px 24px 0 24px;
+									> .sub-title {
+										font-size: 12px;
+										color: #aaa;
+										font-style: normal;
+										font-weight: normal;
+									}
+									> .sub-list {
+										border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+										padding-bottom: 24px;
+										font-size: 15px;
+										> li {
+											height: auto;
+											margin-top: 24px;
+											&:hover > a {
+												text-decoration: underline;
+											}
+											> a {
+												font-size: 15px;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			> nav {
+				position: absolute;
+				width: 1080px;
+				height: 80px;
+				top: 0;
+				right: 10px;
+				@media #{$mobile} {
+					display: none;
+					position: absolute;
+					left: 0;
+					top: 80px;
+					width: 768px;
+					background-color: #fff;
+					border-top: 1px solid #dcdcdc;
+				}
+
+				> .nav-items {
+					width: 1080px;
+					height: 100%;
+					display: block;
+					font-size: 0;
+					text-align: right;
+					margin: 15px auto;
+					@media #{$mobile} {
+						position: absolute;
+						width: 100%;
+						left: -80px;
+						top: 0;
+						font-size: 8px;
+					}
+
+					> li.nav-item {
+						height: 40px;
+						line-height: 40px;
+						min-width: 80px;
+						box-sizing: border-box;
+						display: inline-block;
+						margin: 0 10px;
+						text-align: center;
+						-webkit-transition: border-color .5s;
+						transition: border-color .5s;
+						padding: 0 10px;
+						@media #{$mobile} {
+							font-size: 6px;
+							width: 10%;
+							padding: 0;
+							margin: 0;
+							margin-right: 18px;
+							box-sizing: border-box;
+
+							&.nav-item-btn {
+								width: 16%;
+								padding: 0;
+								margin: 0;
+							}
+						}
+
+						&.nav-item-btn {
+							margin-top: -20px;
+							padding: 0 20px;
+							background: #fede22;
+							border: 1px solid #fede22;
+							display: inline-block;
+							line-height: 40px;
+							font-size: 14px;
+							border-radius: 22px;
+							vertical-align: middle;
+						}
+
+						&:nth-of-type(1) {
+							> .nav-title {
+								.bar {
+									width: 60px;
+								}
+							}
+						}
+						&:nth-of-type(2) {
+							> .nav-title {
+								.bar {
+									width: 75px;
+								}
+							}
+						}
+						&:nth-of-type(3) {
+							> .nav-title {
+								.bar {
+									width: 60px;
+								}
+							}
+						}
+						&:nth-of-type(4) {
+							> .nav-title {
+								.bar {
+									width: 60px;
+								}
+							}
+						}
+
+						> .nav-title {
+							position: relative;
+							display: block;
+							height: 60x;
+							line-height: 60px;
+							font-size: 16px;
+							font-weight: 400;
+							text-align: center;
+
+							> .bar {
+								display: none;
+								position: absolute;
+								left: 0;
+								bottom: -5px;
+								height: 2px;
+								background-color: #000;
+							}
+						}
+						> .nav-subs {
+							display: none;
+							position: absolute;
+							width: 100%;
+							left: 0;
+							right: 0;
+							top: 81px;
+							// bottom: 100%;
+							padding: 50px 0 40px;
+							background-color: #fff;
+							z-index: 200;
+
+							> .nav-sub {
+								display: table;
+								width: 1080px;
+								margin: auto;
+
+								> .nav-sub-item {
+									display: table-cell;
+									text-align: center;
+									width: 20%;
+									background-color: #fff;
+
+									> .nav-sub-title {
+										display: inline-block;
+										width: 100%;
+										font-size: 18px;
+										margin-bottom: 10px;
+										font-weight: 600;
+										border-radius: 20px;
+											&:hover {
+												background-color: #f8e57bc3;
+											}
+											> a {
+												display: block;
+												font-size: 15px;
+												color: #444;
+											}
+									}
+									> .nav-links {
+										> li.nav-link {
+											font-size: 13px;
+											transition: all .1s;
+											line-height: 3;
+											border-radius: 20px;
+											&:hover {
+												background-color: #f8e57bc3;
+											}
+											> a {
+												display: block;
+												font-size: 15px;
+												color: #444;
+											}
+										}
+									}
+								}
+							}
+
+							@media #{$mobile} {
+								opacity: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	} //end of header
+	section {
+		> .module-contents {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			@media #{$mobile} {
+				width: 100%;
+				height: 100%;
+			}
+
+			// 카카오뱅크 메인
+			> .intro-main {
+				position: relative;
+				width: 100%;
+				height: 884px;
+				margin: 0;
+				background-color: #fff;
+				@media #{$mobile} {
+					background-color: #ffef6b;
+					height: 550px;
+				}
+				> .intro-main-content {
+					position: relative;
+					max-width: 1200px;
+					height: 884px;
+					background-image: url(./../images/main-bg3.png);
+					background-size: contain;
+					background-repeat: no-repeat;
+					z-index: 1;
+
+					@media #{$mobile} {
+						width: 100%;
+						background-position: -50% 50%;
+					}
+					margin: auto;
+					> .tit_main {
+						position: absolute;
+						top: 175px;
+						left: 90px;
+						font-weight: bold;
+						font-size: 49px;
+						line-height: 1.4;
+						color: black;
+						-webkit-font-smoothing: antialiased;
+						@media #{$mobile} {
+							font-size: 30px;
+							margin-top: -50px;
+							position: absolute;
+							left: 50%;
+							margin-left: -100px;
+							text-align: center;
+						}
+					}
+					> .tit-sub {
+						position: absolute;
+						top: 330px;
+						left: 92px;
+						font-size: 16px;
+						line-height: 1.95;
+						color: black;
+						opacity: .7;
+						@media #{$mobile} {
+							margin-top: -100px;
+							font-size: 13px;
+							left: 50%;
+							margin-left: -120px;
+							text-align: center;
+						}
+					}
+					> .brand_camp_link {
+						position: absolute;
+						top: 410px;
+						left: 92px;
+						font-size: 16px;
+						color: black;
+						font-weight: bold;
+						text-decoration: underline;
+						@media #{$mobile} {
+							margin-top: -120px;
+							left: 50%;
+							margin-left: -50px;
+							font-size: 13px;
+						}
+					}
+					> .line-store {
+						display: flex;
+						position: absolute;
+						top: 490px;
+						margin-left: 85px;
+						@media #{$mobile} {
+							margin-top: -110px;
+							left: 50%;
+							margin-left: -170px;
+						}
+						> li {
+							width: 178px;
+							height: 60px;
+							padding: 0 6px;
+							@media #{$mobile} {
+								margin-top: -50px;
+							}
+
+							> .link_store {
+								display: block;
+								width: 178px;
+								height: 56px;
+								border: 1px solid rgba(255, 255, 255, .3);
+								border-radius: 12px;
+								font-size: 16.2px;
+								font-weight: bold;
+								line-height: 56px;
+								color: #333;
+								background-color: #fff;
+								text-align: center;
+								-webkit-font-smoothing: antialiased;
+								box-sizing: border-box;
+								&:hover {
+									text-decoration: underline;
+								}
+								@media #{$mobile} {
+									width: 150px;
+									height: 50px;
+									font-size: 12px;
+									line-height: 50px;
+									background-color: #fff;
+								}
+
+								> .img_kabang {
+									display: inline-block;
+									width: 24px;
+									height: 24px;
+									margin: -2px 10px 0 0;
+									background-image: url(./../images/img_kabang_210628.png);
+									background-repeat: no-repeat;
+									background-position: -341px -292px;
+									vertical-align: middle;
+									overflow: hidden;
+									@media #{$mobile} {
+										margin: -5px 10px 0 0;
+									}
+								}
+								> .ico_app {
+									width: 24px;
+									height: 24px;
+									margin-top: -4px;
+									background-position: -371px -292px;
+									@media #{$mobile} {
+										margin: -5px 10px 0 0;
+									}
+								}
+							}
+						}
+					}
+				}
+				> .background-line {
+					width: 100%;
+					height: 720px;
+					background-color: #ffef6b;
+					position: absolute;
+					top: 0;
+				}
+			} //end of main
+
+			// intro_cont 공통사항
+			> .intro_cont {
+				position: relative;
+				background-color: #fff;
+				color: #111;
+				@media #{$mobile} {
+					width: 100%;
+				}
+			}
+
+			// 입출금 통장
+			> .intro_cont.cont_withdrawal {
+				height: 750px;
+				> .cont_img {
+					position: absolute;
+					top: 20px;
+					left: 50%;
+					width: 473px;
+					margin: 0 0 0 -400px;
+					@media #{$mobile} {
+						top: 40%;
+						left: 50%;
+						margin-left: 25px;
+					}
+					> img {
+						position: absolute;
+						left: 50%;
+						width: 473px;
+						margin: 0 0 0 -400px;
+						@media #{$mobile} {
+							width: 272px;
+						}
+					}
+				}
+				> .cont_txt {
+					position: absolute;
+					top: 220px;
+					left: 50%;
+					margin-left: 90px;
+					@media #{$mobile} {
+						top: 80px;
+						left: 50%;
+						margin-left: -140px;
+						text-align: center;
+						z-index: 100;
+					}
+					h3 {
+						font-size: 40px;
+						font-weight: bold;
+						line-height: 1.35;
+
+						@media #{$mobile} {
+							font-size: 20px;
+						}
+					}
+					p {
+						margin-top: 24px;
+						font-size: 15px;
+						font-weight: 400;
+						line-height: 1.7;
+						color: #666;
+						@media #{$mobile} {
+							font-size: 12px;
+						}
+					}
+				}
+				> .cont_btn {
+					position: absolute;
+					top: 438px;
+					left: 50%;
+					margin-left: 120px;
+					@media #{$mobile} {
+						left: 50%;
+						margin-left: -130px;
+						top: 220px;
+						z-index: 100;
+					}
+
+					> .link_bank {
+						display: block;
+						background-color: #f6f6f6;
+						width: 258px;
+						height: 56px;
+						font-size: 16px;
+						line-height: 56px;
+						color: #333;
+						border-radius: 10px;
+						text-align: center;
+						transition: all .4s;
+						@media #{$mobile} {
+							font-size: 13px;
+						}
+						&:hover {
+							background-color: #f8e57bc3;
+						}
+						> .ico-arr {
+							display: inline-block;
+							width: 6px;
+							height: 9px;
+							margin: 5.5px 0 0 8px;
+							vertical-align: text-top;
+						}
+					}
+				}
+			}
+			> .intro_cont_divider {
+				@include contDivider;
+			} //end of 입출금 통장
+
+			// 예금,적금
+			> .intro_cont.cont_deposit_savings {
+				height: 740px;
+
+				> .cont_txt {
+					position: absolute;
+					top: 172px;
+					left: 50%;
+					margin-left: -470px;
+					@media #{$mobile} {
+						text-align: center;
+						left: 50%;
+						margin-left: -235px;
+						margin-top: -100px;
+						width: 100%;
+					}
+
+					> h3 {
+						font-size: 40px;
+						font-weight: bold;
+						line-height: 1.35;
+						@media #{$mobile} {
+							font-size: 20px;
+						}
+					}
+					> p {
+						margin-top: 24px;
+						font-size: 15px;
+						font-weight: 400;
+						line-height: 1.7;
+						color: #666;
+						@media #{$mobile} {
+							width: 345px;
+							font-size: 13px;
+							padding: 0 5px;
+							position: absolute;
+							left: 50%;
+							margin-left: -185px;
+						}
+					}
+					span {
+						display: block;
+						width: 440px;
+						@media #{$mobile} {
+							position: absolute;
+							left: 50%;
+							margin-left: -170px;
+							top: 120px;
+						}
+						img {
+							display: block;
+							width: 440px;
+							height: 104px;
+							margin: 142px 0 0 -8px;
+							@media #{$mobile} {
+								width: 340px;
+								height: 94px;
+							}
+						}
+					}
+				}
+				> .cont_btn {
+					position: absolute;
+					top: 385px;
+					left: 50%;
+					margin-left: -470px;
+					display: flex;
+					width: 320px;
+					// border: 1px solid #000;
+					justify-content: space-between;
+					@media #{$mobile} {
+						width: 310px;
+						position: absolute;
+						top: 250px;
+						left: 50%;
+						margin-left: -155px;
+						> a {
+							font-size: 13px;
+						}
+						&:after {
+							position: absolute;
+							left: 50%;
+							margin-left: -100px;
+							top: 210px;
+							background-image: url(./../images/deposit_2.jpg);
+							background-repeat: no-repeat;
+							width: 200px;
+							height: 280px;
+							content: '';
+						}
+					}
+
+					> .link_deposit {
+						width: 100%;
+						height: 56px;
+						margin-right: 6px;
+						border-radius: 10px;
+						background-color: #f6f6f6;
+						font-size: 15px;
+						line-height: 56px;
+						color: #000;
+						text-align: center;
+						transition: all .4s;
+
+						@media #{$mobile} {
+							width: 150px;
+							height: 50px;
+							font-size: 13px;
+						}
+						&:hover {
+							background-color: #f8e57bc3;
+						}
+						> img {
+							display: inline-block;
+							width: 6px;
+
+							height: 9px;
+							margin: 5.5px 0 0 8px;
+							vertical-align: text-top;
+						}
+					}
+				}
+				> .cont_img {
+					position: absolute;
+					top: 20px;
+					left: 50%;
+					width: 409px;
+					height: 722px;
+					margin-left: 120px;
+					@media #{$mobile} {
+						display: none;
+					}
+
+					> img {
+						position: absolute;
+						top: 20px;
+						left: 50%;
+						width: 409px;
+						height: 722px;
+						margin-left: 120px;
+						animation: deposit .8s forwards;
+						@media #{$mobile} {
+							width: 250px;
+							height: 560px;
+							margin: 120px 0 0 -8px;
+						}
+
+						// border: 1px solid #000;
+					}
+				}
+			}
+			> .intro_cont_divider {
+				@include contDivider;
+			} //end of 예금, 적금
+
+			// 모임통장
+			> .cont_moim {
+				overflow: hidden;
+				height: 750px;
+				> .cont_img {
+					> img {
+						position: absolute;
+						top: 85px;
+						right: 50%;
+						width: 459px;
+						height: 607px;
+						margin-right: 24px;
+						@media #{$mobile} {
+							width: 359px;
+							height: 507px;
+							position: absolute;
+							left: 50%;
+							margin-left: -180px;
+							top: 260px;
+						}
+					}
+				}
+				> .cont_txt {
+					position: absolute;
+					top: 215px;
+					left: 50%;
+					margin-left: 90px;
+					@media #{$mobile} {
+						text-align: center;
+						left: 50%;
+						margin-left: -240px;
+						top: 60px;
+						width: 100%;
+					}
+					> h3 {
+						font-size: 40px;
+						font-weight: bold;
+						line-height: 1.35;
+						@media #{$mobile} {
+							font-size: 20px;
+						}
+					}
+					> p {
+						margin-top: 24px;
+						font-size: 15px;
+						font-weight: 400;
+						line-height: 1.7;
+						color: #666;
+					}
+				}
+				> .cont_btn {
+					position: absolute;
+					top: 455px;
+					left: 50%;
+					margin-left: 90px;
+					@media #{$mobile} {
+						margin-top: -230px;
+						left: 50%;
+						margin-left: -129px;
+					}
+					> .link_bank {
+						display: block;
+						background-color: #f6f6f6;
+						width: 258px;
+						height: 56px;
+						font-size: 16px;
+						line-height: 56px;
+						color: #333;
+						border-radius: 10px;
+						text-align: center;
+						transition: all .4s;
+						@media #{$mobile} {
+							font-size: 13px;
+						}
+
+						&:hover {
+							background-color: #f8e57bc3;
+						}
+						> .ico_arr {
+							display: inline-block;
+							width: 6px;
+							height: 9px;
+							margin: 5.5px 0 0 8px;
+							vertical-align: text-top;
+						}
+					}
+				}
+			}
+			> .intro_cont_divider {
+				@include contDivider;
+			} //end of 모임통장
+
+			// 26주
+			> .cont_26week {
+				height: 650px;
+				.cont_txt {
+					position: absolute;
+					top: 177px;
+					left: 50%;
+					margin-left: -410px;
+					@media #{$mobile} {
+						text-align: center;
+						left: 50%;
+						margin-left: -240px;
+						top: 60px;
+						width: 100%;
+					}
+					> h3 {
+						font-size: 40px;
+						font-weight: bold;
+						line-height: 1.35;
+						@media #{$mobile} {
+							font-size: 20px;
+						}
+					}
+					p {
+						margin-top: 24px;
+						font-size: 15px;
+						font-weight: 400;
+						line-height: 1.7;
+						color: #666;
+					}
+				}
+				.cont_btn {
+					position: absolute;
+					top: 395px;
+					left: 50%;
+					margin-left: -410px;
+					border-color: #c2c2c2;
+					@media #{$mobile} {
+						margin-top: -180px;
+						left: 50%;
+						margin-left: -129px;
+					}
+					> .link_bank {
+						display: block;
+						background-color: #f6f6f6;
+						width: 258px;
+						height: 56px;
+						font-size: 16px;
+						line-height: 56px;
+						color: #333;
+						border-radius: 10px;
+						text-align: center;
+						transition: all .4s;
+						@media #{$mobile} {
+							font-size: 13px;
+						}
+						&:hover {
+							background-color: #f8e57bc3;
+						}
+						> .ico_arr {
+							display: inline-block;
+							width: 6px;
+							height: 9px;
+							margin: 5.5px 0 0 8px;
+							vertical-align: text-top;
+						}
+					}
+				}
+				> .cont_img {
+					> img {
+						position: absolute;
+						top: 130px;
+						left: 50%;
+						margin-left: 40px;
+						width: 492px;
+						height: 408px;
+						@media #{$mobile} {
+							position: absolute;
+							left: 50%;
+							margin-left: -151px;
+							top: 320px;
+							width: 302px;
+							height: 228px;
+						}
+					}
+				}
+			}
+			> .intro_cont_divider {
+				@include contDivider;
+			} //ond of 26주
+
+			//해외송금
+			> .cont_foreign_remmittance {
+				height: 800px;
+				background-color: #fff;
+				background-image: url(./../images/home_map.png);
+				background-repeat: no-repeat;
+				background-position: -12% 50%;
+				> .cont_img {
+					> img {
+						position: absolute;
+						top: 300px;
+						right: 55%;
+						width: 408px;
+						height: 715px;
+						margin: 0 -40px 0 -155px;
+						animation: deposit .6s forwards;
+						@media #{$mobile} {
+							display: none;
+						}
+					}
+				}
+				> .cont_txt {
+					position: absolute;
+					top: 196px;
+					left: 50%;
+					margin-left: 90px;
+					@media #{$mobile} {
+						text-align: center;
+						left: 50%;
+						margin-left: -235px;
+						top: 60px;
+						width: 100%;
+						&:before {
+							position: absolute;
+							top: 300px;
+							left: 50%;
+							margin-left: -110px;
+							width: 200px;
+							height: 410px;
+							background-image: url(./../images/foreign.jpg);
+							content: '';
+						}
+					}
+					h3 {
+						font-size: 40px;
+						font-weight: bold;
+						line-height: 1.35;
+						@media #{$mobile} {
+							font-size: 20px;
+						}
+					}
+					p {
+						margin-top: 24px;
+						font-size: 15px;
+						font-weight: 400;
+						line-height: 1.7;
+						color: #666;
+					}
+				}
+				> .cont_btn {
+					position: absolute;
+					top: 492px;
+					left: 50%;
+					margin-left: 90px;
+					@media #{$mobile} {
+						margin-top: -220px;
+						left: 50%;
+						margin-left: -129px;
+					}
+					> .link_bank {
+						display: block;
+						background-color: #f6f6f6;
+						width: 258px;
+						height: 56px;
+						font-size: 16px;
+						line-height: 56px;
+						color: #333;
+						border-radius: 10px;
+						text-align: center;
+						transition: all .4s;
+						@media #{$mobile} {
+							font-size: 13px;
+						}
+						&:hover {
+							background-color: #f8e57bc3;
+						}
+						> .ico_arr {
+							display: inline-block;
+							width: 6px;
+							height: 9px;
+							margin: 5.5px 0 0 8px;
+							vertical-align: text-top;
+						}
+					}
+				}
+			} //end of 해외송금
+
+			// 여신
+			> .cont_loan {
+				overflow: hidden;
+				height: 930px;
+				> .sky {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color: #333b58;
+					> .blue {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						height: 100%;
+						background-color: #559cde;
+						-webkit-transition: height .85s;
+						transition: height .85s;
+					}
+				}
+				> .cont_img {
+					> img {
+						position: absolute;
+						width: 429px;
+						height: 563px;
+						bottom: 0;
+						left: 50%;
+						margin-left: -215px;
+					}
+				}
+				> .cont_txt {
+					position: relative;
+					z-index: 100;
+					text-align: center;
+					padding-top: 160px;
+					@media #{$mobile} {
+						position: absolute;
+						text-align: center;
+						left: 50%;
+						margin-left: -130px;
+						top: -80px;
+						width: 260px;
+					}
+					h3 {
+						color: #fff;
+						font-weight: 600;
+						font-size: 40px;
+						line-height: 1.35;
+						@media #{$mobile} {
+							font-size: 20px;
+						}
+					}
+					p {
+						color: #fff;
+						font-weight: 200;
+						opacity: 60%;
+						margin-top: 24px;
+						font-size: 15px;
+						line-height: 1.7;
+						text-shadow: 1px 1px 3px d;
+					}
+				}
+				> .cont_btn {
+					position: absolute;
+					top: 288px;
+					left: 50%;
+					width: 688px;
+					margin-left: -344px;
+					@media #{$mobile} {
+						width: 344px;
+						top: 240px;
+						margin-left: -172px;
+					}
+					> .link_loan {
+						float: left;
+						width: 166px;
+						height: 52px;
+						border-radius: 10px;
+						background-color: rgba(255, 255, 255, 0.09);
+						margin-left: 6px;
+						font-size: 16px;
+						line-height: 51px;
+						color: #fff;
+						text-align: center;
+						transition: all .4s;
+						margin-top: 20px;
+						&:hover {
+							background-color: #fff;
+							color: #000;
+						}
+						> .ico_arr {
+							display: inline-block;
+							width: 6px;
+							height: 9px;
+							margin: 5.5px 0 0 8px;
+							vertical-align: text-top;
+						}
+					}
+				}
+				> .moon {
+					overflow: hidden;
+					position: absolute;
+					top: 200px;
+					left: 50%;
+					width: 112px;
+					height: 112px;
+					margin-left: 450px;
+					border-radius: 56px;
+					@media #{$mobile} {
+						position: absolute;
+						top: 30px;
+						left: 120px;
+					}
+					> .moon_original {
+						position: absolute;
+						top: 1px;
+						left: 1px;
+						width: 110px;
+						height: 110px;
+						border-radius: 55px;
+						background-color: #ffdc00;
+					}
+					> .moon_show {
+						position: absolute;
+						left: -200px;
+						top: -200px;
+						width: 100%;
+						height: 100%;
+						border-radius: 55px;
+						background-color: #333b58;
+						transition-property: background-color, top, left;
+						transition-duration: .85s;
+					}
+				}
+				> .ico_star {
+					display: block;
+					width: 4px;
+					height: 4px;
+					border-radius: 4px;
+					z-index: 1000;
+					&.ico_star1 {
+						position: absolute;
+						top: 30%;
+						left: 10%;
+						animation: clittering 2s infinite;
+					}
+					&.ico_star2 {
+						position: absolute;
+						top: 10%;
+						left: 20%;
+						animation: clittering 3s infinite;
+					}
+					&.ico_star3 {
+						position: absolute;
+						top: 25%;
+						left: 15%;
+						animation: clittering 5s infinite;
+					}
+					&.ico_star4 {
+						position: absolute;
+						top: 40%;
+						right: 15%;
+						animation: clittering 2s infinite;
+					}
+					&.ico_star5 {
+						position: absolute;
+						top: 43%;
+						right: 30%;
+						animation: clittering 4s infinite;
+					}
+					&.ico_star6 {
+						position: absolute;
+						top: 73%;
+						right: 27%;
+						animation: clittering 1.8s infinite;
+					}
+					&.ico_star8 {
+						position: absolute;
+						top: 65%;
+						left: 22%;
+						animation: clittering 3.5s infinite;
+					}
+				}
+			} //end of 여신
+
+			// 체크카드
+			> .intro_cont.cont_checkcard {
+				height: 1024px;
+				@media #{$mobile} {
+					width: 100%;
+					height: 600px;
+				}
+				> .cont_btn {
+					position: absolute;
+					top: 337px;
+					left: 50%;
+					margin-left: -129px;
+					@media #{$mobile} {
+						top: 230px;
+					}
+					> .link_bank {
+						display: block;
+						background-color: #f6f6f6;
+						width: 258px;
+						height: 56px;
+						font-size: 16px;
+						line-height: 56px;
+						color: #333;
+						border-radius: 10px;
+						text-align: center;
+						transition: all .4s;
+						@media #{$mobile} {
+							font-size: 13px;
+						}
+						&:hover {
+							background-color: #f8e57bc3;
+						}
+
+						> img {
+							display: inline-block;
+							width: 6px;
+							height: 9px;
+							margin: 5.5px 0 0 8px;
+							vertical-align: text-top;
+						}
+					}
+				}
+				> .cont_img {
+					position: absolute;
+					width: 800px;
+					// height: 475px;
+					top: 469px;
+					left: 50%;
+					margin-left: -480px;
+					@media #{$mobile} {
+						display: none;
+					}
+
+					#slides {
+						position: relative;
+						width: 960px;
+						margin: 0 auto;
+
+						> .screen {
+							overflow: hidden;
+							position: relative;
+							width: 620px;
+							height: 460px;
+							margin: 0 auto;
+
+							> .slides-container {
+								display: flex;
+								flex-flow: row nowrap;
+
+								position: absolute;
+								left: -240px;
+								top: 0;
+
+								width: calc(240px * 5);
+								padding-top: 40px;
+
+								> li {
+									width: 240px;
+
+									&.on {
+										margin-left: -50px;
+										animation: scaleUp .2s forwards;
+
+										& + li {
+											margin-left: -50px;
+										}
+									}
+									> a {
+										display: block;
+										> img {
+											display: block;
+											width: 100%;
+										}
+									}
+								} //end of li
+							}
+						}
+						//이전다음
+						> a {
+							display: block;
+							position: absolute;
+							top: 50%;
+							width: 38px;
+							height: 72px;
+							margin-top: -36px;
+							text-indent: -9999px;
+							@media #{$mobile} {
+								display: none;
+							}
+						}
+						> .prev {
+							left: 0;
+							background-image: url(../images/prev.png);
+						}
+						> .next {
+							right: 0;
+							background-image: url(../images/next.png);
+						}
+					}
+				}
+				> .cont_txt {
+					text-align: center;
+					padding-top: 150px;
+					@media #{$mobile} {
+						padding-top: 80px;
+						&:after {
+							position: absolute;
+							width: 460px;
+							height: 360px;
+							height: 150px;
+							left: 50%;
+							margin-left: -180px;
+							top: 50%;
+							margin-top: 50px;
+
+							background-image: url(./../images/checkcard_mobile.jpg);
+							background-repeat: no-repeat;
+							content: '';
+						}
+					}
+
+					> h3 {
+						font-size: 40px;
+						font-weight: bold;
+						line-height: 1.35;
+						@media #{$mobile} {
+							font-size: 20px;
+						}
+					}
+					> p {
+						margin-top: 24px;
+						font-size: 15px;
+						font-weight: 400;
+						line-height: 1.7;
+						color: #666;
+						@media #{$mobile} {
+							margin: 20px auto;
+							width: 300px;
+							font-size: 13px;
+						}
+					}
+				}
+			} //end of 체크카드
+
+			// 마무리
+			> .cont_end {
+				background-color: #f9f9f9;
+				padding-bottom: 230px;
+
+				> .cont_txt {
+					text-align: center;
+					padding-top: 160px;
+					@media #{$mobile} {
+						padding-top: 60px;
+					}
+
+					> h3 {
+						font-size: 40px;
+						font-weight: bold;
+						line-height: 1.35;
+						@media #{$mobile} {
+							font-size: 20px;
+						}
+					}
+				}
+				> .cont_bar {
+					display: block;
+					width: 100px;
+					height: 2px;
+					background-color: #000;
+					margin: 50px auto 140px;
+				}
+				> .cont_bar_bg {
+					position: absolute;
+					top: 583px;
+					display: block;
+					width: 100%;
+					height: 1px;
+					background-color: #eee;
+				}
+				> .cont_img {
+					position: relative;
+					z-index: 10;
+					text-align: center;
+
+					> img {
+						width: 1020px;
+						@media #{$mobile} {
+							display: none;
+						}
+					}
+					> ul {
+						overflow: hidden;
+						width: 1020px;
+						margin: 0 auto;
+						@media #{$mobile} {
+							width: 100%;
+							margin-top: -50px;
+							overflow: initial;
+						}
+
+						li {
+							float: left;
+							width: 25%;
+							height: 210px;
+							@media #{$mobile} {
+								float: initial;
+								margin: 0 auto;
+								// border: 1px solid #000;
+								&:nth-of-type(1) {
+									margin-top: 50px;
+								}
+								&:nth-of-type(2) {
+									margin-top: 50px;
+								}
+								&:nth-of-type(4) {
+									margin-top: 50px;
+								}
+								&:nth-of-type(3) {
+									display: none;
+								}
+							}
+
+							> span {
+								display: none;
+								@media #{$mobile} {
+									display: block;
+								}
+								> img {
+									display: block;
+									width: 100px;
+									height: 100px;
+									margin: 0 10px;
+								}
+							}
+							> strong {
+								display: block;
+								margin: 45px 0 17px;
+								font-size: 18px;
+								color: #000;
+								font-weight: bold;
+								text-align: center;
+								@media #{$mobile} {
+									margin-top: 10px;
+									font-size: 14px;
+									width: 200px;
+									margin-left: -40px;
+								}
+							}
+							> p {
+								font-size: 14px;
+								line-height: 24px;
+								text-align: center;
+								color: #666;
+								font-weight: 200;
+								@media #{$mobile} {
+									width: 200px;
+									font-size: 12px;
+									margin-left: -40px;
+								}
+							}
+						}
+					}
+				}
+			} //end of 마무리
+		}
+	}
+
+	.to_top {
+		display: none;
+		position: fixed;
+		right: 10%;
+		bottom: 10%;
+		width: 40px;
+		z-index: 1000;
+		&:hover {
+			a {
+				background-color: rgb(20, 37, 79);
+
+				color: #fede22;
+			}
+		}
+		a {
+			display: block;
+			height: 40px;
+			background-color: #fede22;
+			color: rgb(20, 37, 79);
+			text-align: center;
+			font-size: 10px;
+			padding: 10px 0;
+			box-sizing: border-box;
+			transition: all .4s;
+			span {
+				display: block;
+				font-size: 8px;
+			}
+		}
+	}
+	footer {
+		position: relative;
+		background-color: #eee;
+		min-width: 1120px;
+		height: 140px;
+		text-align: center;
+		padding-bottom: 20px;
+		@media #{$mobile} {
+			min-width: initial;
+			width: 100%;
+		}
+
+		> .inner_foot {
+			position: relative;
+			width: 1080px;
+			margin: 0 auto;
+			padding: 0 20px;
+			@media #{$mobile} {
+				width: 100%;
+			}
+			> .info_copyright {
+				margin-top: 20px;
+				color: rgb(75, 73, 73);
+				line-height: 1.5;
+				@media #{$mobile} {
+					line-height: 2.0;
+					text-align-last: left;
+				}
+			}
+
+			> .footer_info {
+				overflow: hidden;
+				padding: 37px 0 12px;
+				@media #{$mobile} {
+					width: 100%;
+				}
+
+				> .link_service {
+					float: left;
+					color: #666;
+					font-size: 12px;
+					@media #{$mobile} {
+						font-size: 10px;
+						&:nth-of-type(3) {
+							display: none;
+						}
+						&:nth-of-type(5) {
+							display: none;
+						}
+						&:nth-of-type(6) {
+							display: none;
+						}
+						&:nth-of-type(7) {
+							display: none;
+						}
+						&:nth-of-type(8) {
+							display: none;
+						}
+						&:nth-of-type(9) {
+							display: none;
+						}
+					}
+				}
+				> .link_service.link_bold {
+					color: #000;
+					font-weight: bold;
+				}
+				> .txt_bar {
+					float: left;
+					width: 1px;
+					height: 10px;
+					margin: 3px 15px 0;
+					background-color: #d8d8d8;
+					@media #{$mobile} {
+						font-size: 10px;
+						&:nth-of-type(3) {
+							display: none;
+						}
+						&:nth-of-type(5) {
+							display: none;
+						}
+						&:nth-of-type(6) {
+							display: none;
+						}
+						&:nth-of-type(7) {
+							display: none;
+						}
+						&:nth-of-type(8) {
+							display: none;
+						}
+						&:nth-of-type(9) {
+							display: none;
+						}
+					}
+				}
+			}
+			> .footer_bottom {
+				text-align: left;
+				// padding-top: 10px;
+				@media #{$mobile} {
+					display: none;
+				}
+				a {
+					display: inline-block;
+					img {
+						display: inline-block;
+						width: 48px;
+						height: 32px;
+						object-fit: contain;
+						vertical-align: middle;
+					}
+					span {
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+				.list_channel {
+					overflow: hidden;
+					position: absolute;
+					top: 90px;
+					right: 55px;
+					padding-top: inherit;
+					> li {
+						float: left;
+						> .link_channel {
+							display: block;
+							overflow: hidden;
+							height: 20px;
+							width: 30px;
+							> .img_kabang {
+								display: block;
+								height: 20px;
+								margin: 0 auto;
+								background-image: url(./../images/img_kabang_210628.png);
+								text-indent: -9999px;
+								&.ico_facebook {
+									width: 10px;
+									background-position: -120px -360px;
+								}
+								&.ico_blog {
+									width: 12px;
+									background-position: -140px -360px;
+								}
+								&.ico_naver {
+									width: 14px;
+									background-position: -389px -360px;
+								}
+								&.ico_youtube {
+									width: 23px;
+									margin-top: 2px;
+									background-position: -160px -360px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		> .pcver {
+			display: none;
+			@media #{$mobile} {
+				position: absolute;
+				border-radius: 5px;
+				border: 2px solid #ccc;
+				padding: 1px 5px;
+				color: rgb(99, 98, 98);
+				display: block;
+				position: absolute;
+				left: 50%;
+				bottom: 32px;
+				margin-left: 40px;
+
+				font-size: 10px;
+			}
+		}
+	}
+}

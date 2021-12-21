@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카카오뱅크</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/jquery.easing.min.js"></script>
+  <script src="./js/javascript.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header>
+      <div id="wrap-header">
+        <h1 class="logo">
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="116" height="20" viewBox="0 0 116 20">
+              <path fill="#000" fill-rule="evenodd"
+                d="M110.538 12.723L115 18.047 112.524 20l-5.419-6.618v6.179h-3.285V1.344l3.285-.586v11.843l4.953-6.69 2.452 1.709-3.972 5.103zM0 1.295V19.56h2.06V.83L0 1.295zm2.967 11.6l5.712 7.007 1.618-1.27-4.903-5.836 4.241-5.274-1.618-1.197-5.05 6.57zm16.106.658H16.77c-2.33 0-3.384.782-3.384 2.442 0 1.343.736 2.1 2.06 2.1 1.2 0 2.77-.634 3.628-1.465v-3.077zm0-1.44v-1.05c0-2.027-.907-2.833-2.623-2.833-1.201 0-2.55.366-3.604.855l-.613-1.441c1.3-.733 2.868-1.172 4.266-1.172 3.065 0 4.56 1.465 4.56 4.688v8.4h-1.52l-.245-1.416c-1.275 1.026-2.918 1.612-4.217 1.612-2.28 0-3.653-1.368-3.653-3.663 0-2.613 1.765-3.98 5.075-3.98h2.574zm13.68-5.788l1.618 1.197-4.242 5.274 4.904 5.837-1.618 1.27-5.713-7.009 5.05-6.569zm-5.958 13.236h-2.06V1.295l2.06-.464v18.73zm17.014-6.008h-2.305c-2.33 0-3.383.782-3.383 2.442 0 1.343.735 2.1 2.06 2.1 1.2 0 2.77-.634 3.628-1.465v-3.077zm0-1.44v-1.05c0-2.027-.907-2.833-2.624-2.833-1.2 0-2.55.366-3.604.855l-.613-1.441c1.3-.733 2.869-1.172 4.266-1.172 3.065 0 4.56 1.465 4.56 4.688v8.4h-1.52l-.245-1.416c-1.274 1.026-2.917 1.612-4.217 1.612-2.28 0-3.653-1.368-3.653-3.663 0-2.613 1.765-3.98 5.075-3.98h2.575zm10.664 6.007c2.28 0 3.604-1.71 3.604-4.957 0-3.248-1.324-5.006-3.604-5.006-2.28 0-3.604 1.758-3.604 5.006 0 3.247 1.324 4.957 3.604 4.957zm0 1.685c-3.58 0-5.737-2.369-5.737-6.642 0-4.298 2.182-6.691 5.737-6.691 3.58 0 5.737 2.393 5.737 6.69 0 4.274-2.133 6.643-5.737 6.643zm12.085-2.418a7.49 7.49 0 0 0 1.177.074c2.059 0 3.53-1.295 3.53-4.591 0-2.491-.613-3.932-2.942-3.932-.736 0-1.373.171-1.765.293v8.156zM63.272 1.344l3.286-.586v6.373a5.625 5.625 0 0 1 2.942-.83c3.481 0 5.1 2.369 5.1 6.496 0 4.468-2.452 7.13-6.522 7.13-1.888 0-3.898-.366-4.806-.757V1.344zm20.324 12.478h-1.765c-1.765 0-2.697.708-2.697 2.002 0 .928.54 1.539 1.618 1.539 1.128 0 2.256-.513 2.844-1.026v-2.515zm0-2.1v-.44c0-1.416-.441-2.222-2.378-2.222a7.264 7.264 0 0 0-3.482.855l-.907-2.246C78.08 6.814 79.92 6.3 81.61 6.3c3.31 0 5.05 1.612 5.05 4.957v8.303h-2.304l-.368-1.1c-1.324 1.026-2.746 1.441-3.898 1.441-2.525 0-3.923-1.489-3.923-4.053 0-2.71 1.864-4.127 5.37-4.127h2.06zm6.006-5.03h2.329l.49 1.294C93.573 6.96 95.167 6.3 96.54 6.3c2.893 0 4.34 1.783 4.34 5.006v8.253h-3.286v-8.35c0-1.441-.54-2.052-2.28-2.052-.687 0-1.667.195-2.427.488v9.914h-3.285V6.692z" />
+            </svg>
+          </a>
+        </h1>
+        <a href="#" class="gnb_btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <nav class="mob">
+          <div class="nav-header">
+            <a href="#" class="clse">
+              <img src="./images/ico-close.svg" alt="닫기">
+            </a>
+            <a href="#" class="logo">
+              <img src="./images/logo_black.svg" alt="kakaobank">
+            </a>
+          </div>
+          <ul class="gnb_mob">
+            <li><a href="#">카카오뱅크 소개</a></li>
+            <li class="list-group">
+              <div class="list-item">
+                <a href="#">상품안내</a>
+                <button type="button">더보기</button>
+              </div>
+              <div class="list-contents">
+                <div class="list-content">
+                  <em class="sub-title">예적금</em>
+                  <ul class="sub-list">
+
+                    <li><a href="#">입출금통장</a></li>
+
+                    <li><a href="#">모임통장</a></li>
+
+                    <li><a href="#">세이프박스</a></li>
+
+                    <li><a href="#">저금통</a></li>
+
+                    <li><a href="#">정기예금</a></li>
+
+                    <li><a href="#">자유적금</a></li>
+
+                    <li><a href="#">26주적금</a></li>
+
+                  </ul>
+                </div>
+
+                <div class="list-content">
+                  <em class="sub-title">대출</em>
+                  <ul class="sub-list">
+
+                    <li><a href="#">비상금대출</a></li>
+
+                    <li><a href="#">마이너스 통장대출</a></li>
+
+                    <li><a href="#">신용대출</a></li>
+
+                    <li><a href="#">개인사업자 대출</a></li>
+
+                    <li><a href="#n">전월세보증금 대출</a></li>
+
+                  </ul>
+                </div>
+
+                <div class="list-content">
+                  <em class="sub-title">서비스</em>
+                  <ul class="sub-list">
+
+                    <li><a href="#">내 신용정보</a></li>
+
+                    <li><a href="#">해외송금 보내기</a></li>
+
+                    <li><a href="#">해외송금 받기</a></li>
+
+                    <li><a href="#">프렌즈 체크카드</a></li>
+
+                  </ul>
+                </div>
+
+                <div class="list-content">
+                  <em class="sub-title">제휴서비스</em>
+                  <ul class="sub-list">
+
+                    <li><a href="#">증권사 주식계좌</a></li>
+
+                    <li><a href="#">제휴 신용카드</a></li>
+
+                  </ul>
+                </div>
+
+                <div class="list-content">
+                  <em class="sub-title">mini</em>
+                  <ul class="sub-list">
+
+                    <li><a href="#">카카오뱅크 mini</a></li>
+
+                    <li><a href="#">mini카드</a></li>
+
+                  </ul>
+                </div>
+
+              </div>
+            </li>
+            <li><a href="">공지사항</a></li>
+            <li><a href="">이벤트</a></li>
+            <li><a href="">자주 묻는 질문</a></li>
+          </ul>
+        </nav>
+
+        <nav>
+          <ul class="nav-items">
+            <li class="nav-item">
+              <a href="#" class="nav-title nav-anchor" id="Corp">
+                <span>은행소개</span>
+                <span class="bar on"></span>
+              </a>
+              <div class="nav-subs">
+                <div class="nav-sub">
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">카카오뱅크</a>
+                    <ul class="nav-links">             
+                      <li class="nav-link"><a href="#" class="nav-anchor">카카오뱅크</a></li>            
+                      <li class="nav-link"><a href="#" class="nav-anchor">브랜드</a></li>            
+                      <li class="nav-link"><a href="#" class="nav-anchor">주주사 소개</a></li>    
+                      <li class="nav-link"><a href="#" class="nav-anchor">오시는 길</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">제휴문의</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">윤리경영</a>
+                    <ul class="nav-links">
+                      <li class="nav-link"><a href="#" class="nav-anchor">윤리강령</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">임직원행동기준</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor" target="_blank"
+                      title="새창열림">인재채용 &gt;</a>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">새소식</a>
+                    <ul class="nav-links">
+                      <li class="nav-link"><a href="#" class="nav-anchor">공지사항</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">보도자료</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-title nav-anchor" id="IR">
+                <span>IR투자정보</span>
+                <span class="bar"></span>
+              </a>
+              <div class="nav-subs">
+                <div class="nav-sub">
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">공시정보
+                    </a>
+                    <ul class="nav-links">
+                      <li class="nav-link"><a href="#" class="nav-anchor">경영공시</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">바젤공시</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">기타공시</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">재무정보</a>
+                    <ul class="nav-links">
+                      <li class="nav-link"><a href="#" class="nav-anchor">재무제표</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">감사보고서</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">영업보고서</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">IR자료실</a>
+                    <ul class="nav-links">
+                      <li class="nav-link"><a href="#" class="nav-anchor">실적발표</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">IR일정</a>
+                    <ul class="nav-links">
+                      <li class="nav-link"><a href="#" class="nav-anchor">IR행사</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">IR미팅예약</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">주주총회</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">공고</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-title nav-anchor" id="products">
+                <span>상품안내</span>
+                <span class="bar"></span>
+              </a>
+              <div class="nav-subs">
+                <div class="nav-sub">
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">예적금</a>
+                    <ul class="nav-links">                     
+                      <li class="nav-link"><a href="#" class="nav-anchor">입출금통장</a></li>                
+                      <li class="nav-link"><a href="#" class="nav-anchor">모임통장</a></li>                  
+                      <li class="nav-link"><a href="#" class="nav-anchor">세이프박스</a></li>           
+                      <li class="nav-link"><a href="#" class="nav-anchor">저금통</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">정기예금</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">자유적금</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">26주적금</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">대출</a>
+                    <ul class="nav-links">         
+                      <li class="nav-link"><a href="#" class="nav-anchor">비상금대출</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">마이너스통장대출</a></li>                
+                      <li class="nav-link"><a href="#" class="nav-anchor">신용대출</a></li>     
+                      <li class="nav-link"><a href="#" class="nav-anchor">개인사업자 대출</a></li>        
+                      <li class="nav-link"><a href="#" class="nav-anchor">전월세보증금대출</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">서비스</a>
+                    <ul class="nav-links">  
+                      <li class="nav-link"><a href="#" class="nav-anchor">내 신용정보</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">해외송금 보내기</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">해외송금 받기</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">프렌즈체크카드</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">제휴서비스</a>
+                    <ul class="nav-links">
+                      <li class="nav-link"><a href="#" class="nav-anchor">증권사주식계좌</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">제휴신용카드</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">mini</a>
+                    <ul class="nav-links">
+                      <li class="nav-link"><a href="#" class="nav-anchor">카카오뱅크mini</a></li>                    
+                      <li class="nav-link"><a href="#" class="nav-anchor">mini카드</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-title nav-anchor" id="Help">
+                <span>고객센터</span>
+                <span class="bar"></span>
+              </a>
+              <div class="nav-subs">
+                <div class="nav-sub">
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">이용안내</a>
+                    <ul class="nav-links">                     
+                      <li class="nav-link"><a href="#" class="nav-anchor">자주 묻는 질문</a></li>            
+                      <li class="nav-link"><a href="#" class="nav-anchor">이용시간 안내</a></li>                    
+                      <li class="nav-link"><a href="#" class="nav-anchor">ATM 이용안내</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">금리안내</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">수수료안내</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">상담안내</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">상담하기</a>
+                    <ul class="nav-links"> 
+                      <li class="nav-link"><a href="#" class="nav-anchor">고객의 소리</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">1:1 문의</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">소비자보호</a>
+                    <ul class="nav-links">
+                      <li class="nav-link"><a href="#" class="nav-anchor">소비자보호체계</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">소비자보호우수사례</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">전자민원</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">소비자보호공시</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">민원사무편람</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">금융정보</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">금융사기 관련공시</a></li>    
+                      <li class="nav-link"><a href="#" class="nav-anchor">보안취약점 신고 안내</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">증명서</a>
+                    <ul class="nav-links">   
+                      <li class="nav-link"><a href="#" class="nav-anchor">나의 증명서 발급내역</a></li>
+                      <li class="nav-link"><a href="#" class="nav-anchor">증명서 진위 확인</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-sub-item">
+                    <a href="#" class="nav-sub-title nav-anchor">약관 ・ 서식</a>
+                    <ul class="nav-links">                     
+                      <li class="nav-link"><a href="#" class="nav-anchor">약관</a></li>      
+                      <li class="nav-link"><a href="#" class="nav-anchor">서식</a></li>                     
+                      <li class="nav-link"><a href="#" class="nav-anchor">상품설명서</a></li>                   
+                      <li class="nav-link"><a href="#" class="nav-anchor">상품공시</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item"><a href="#" class="nav-title nav-anchor" id="Events"><span>이벤트</span></a></li>
+            <li class="nav-item nav-item-btn">
+              <a href="#" id="go-to-scraping" class="btn-link" title="새창열림"><span>서류제출하기</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section>
+      <div class="module-contents">
+        <!-- 카카오뱅크 메인 -->
+        <div class="intro-main">
+          <div class="intro-main-content">
+            <h1 class="sr-only">앱스토어 바로가기</h1>
+            <h3 class="tit_main">
+              이미 모두의 은행 <br />
+              지금은 카카오뱅크
+            </h3>
+            <p class="tit-sub">
+              한 사람, 한 사람을 위해 시작한 은행이 <br />
+              더 많은 사람들이 찾는 모두의 은행이 되었습니다.
+            </p>
+
+            <a class="brand_camp_link" href="#">브랜드 캠페인 보러가기</a>
+
+            <ul class="line-store">
+              <li>
+                <a class="link_store" href="#" target="_blank" title="새창열림"><span class="img_kabang"></span>
+                  GooglePlay
+                </a>
+              </li>
+              <li>
+                <a class="link_store" href="#" target="_blank" title="새창열림"><span class="img_kabang ico_app"></span>
+                  AppStore
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="background-line"></div>
+        </div>
+
+        <!-- 입출금 통장 -->
+        <div class="intro_cont cont_withdrawal">
+          <div class="cont_img">
+            <img src="./images/main-withdrawal.png" alt="카카오뱅크 이체 및 계좌개설 화면">
+          </div>
+
+          <div class="cont_txt">
+            <h3>
+              모바일로 더 손쉬운 <br />
+              계좌개설, 간편한 이체
+            </h3>
+            <p>
+              인증서, OTP 없이 계좌 개설이 간편합니다. <br />
+              여러 건의 이체도 몇 번의 터치로 손쉽게 보낼 수 있습니다.
+            </p>
+          </div>
+
+          <div class="cont_btn">
+            <a href="#" class="link_bank">
+              <img src="./images/home_arr.png" class="ico-arr" alt="열기">
+              카카오뱅크 입출금통장
+            </a>
+          </div>
+        </div>
+        <div class="intro_cont_divider"></div>
+
+        <!-- 예금, 적금 -->
+        <div class="intro_cont cont_deposit_savings">
+          <div class="cont_txt">
+            <h3>
+              "우대조건 없이" <br />
+              "합리적인 예금과 적금"
+            </h3>
+            <p>
+              대했던 금리와 다르게 복잡한 우대조건에 실망한 적이 있었나요? <br />
+              카카오뱅크의 예금, 적금은 숨겨진 우대조건 없이 누구에게나 편리하고 합리적입니다.
+            </p>
+            <span>
+              <img alt="적은 금액부터 큰 금액까지, 짧은 기간부터 긴 기간까지, 누구에게나 합리적인" src="./images/main-savings-money.png">
+            </span>
+          </div>
+
+          <div class="cont_btn">
+            <a href="#" class="link_deposit" targer="self">정기예금
+              <img src="./images/home_arr.png" class="ico_arr" alt="열기">
+            </a>
+            <a href="#" class="link_deposit" targer="self">자유적금
+              <img src="./images/home_arr.png" class="ico_arr" alt="열기">
+            </a>
+          </div>
+
+          <div class="cont_img"
+            style="visibility:visible;transform: translateX(0) scale(1);opacity: 1;transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s; ">
+
+            <img src="./images/main-savings.png" alt="예금/적금 가입 이용화면">
+          </div>
+
+        </div>
+        <div class="intro_cont_divider"></div>
+
+        <!-- 모임통장 -->
+        <div class="intro_cont cont_moim">
+          <div class="cont_img">
+            <img src="./images/main-moim.png" alt="모임통장 이용화면">
+          </div>
+          <div class="cont_txt">
+            <h3>함께 쓰고 같이 보는 <br />
+              모임통장
+            </h3>
+            <p>카카오톡 친구를 바로 모임통장으로 초대하고 <br />
+              친구들과 함께 잔액과 입출금 현황을 확인할 수 있습니다. <br />
+              재미있는 메시지 카드로 회비 입금 요청도 해보세요.
+            </p>
+          </div>
+          <div class="cont_btn">
+            <a href="#" class="link_bank" target="self">
+              모임통장
+              <img src="./images/home_arr.png" class="ico_arr" alt="열기">
+            </a>
+          </div>
+        </div>
+        <div class="intro_cont_divider"></div>
+
+        <!-- 26주 -->
+        <div class="intro_cont cont_26week">
+          <div class="cont_txt">
+            <h3>함께 도전해서 <br />
+              재미있는 26주적금
+            </h3>
+            <p>
+              26주동안 변화하는 재미에 빠져있는 사이 <br />
+              어느덧 만기 달성 경험을 맛보게 됩니다.
+            </p>
+          </div>
+          <div class="cont_btn">
+            <a href="#" class="link_bank" target="self">
+              26주적금
+              <img src="./images/home_arr.png" class="ico_arr" alt="열기">
+            </a>
+          </div>
+          <div class="cont_img">
+            <img src="./images/main-26weeks.png" alt="26주적금 이용화면">
+          </div>
+        </div>
+        <div class="intro_cont_divider"></div>
+
+        <!-- 해외송금 -->
+        <div class="intro_cont cont_foreign_remmittance"
+          style="visibility: visible;
+        -webkit-transform: translateY(0) scale(1);
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        -webkit-transition: -webkit-transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s;
+        transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s;">
+          <div class="cont_img">
+            <img src="./images/main-foreignRemittance.png" alt="해외송금 이용화면">
+          </div>
+          <div class="cont_txt">
+            <h3>
+              해외계좌송금과 <br />
+              WU빠른해외송금을 <br />
+              더 쉽고, 저렴하게
+            </h3>
+            <p>
+              해외계좌송금이 가능한 22개국을 포함하여 <br />
+              전세계 200여개국으로 <br />
+              WU빠른해외송금이 가능합니다.
+            </p>
+          </div>
+          <div class="cont_btn">
+            <a href="#" class="link_bank" target="self">해외송금
+              <img src="./images/home_arr.png" class="ico_arr" alt="열기">
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- 여신 -->
+        <div class="intro_cont cont_loan" style="visibility: visible;-webkit-transform: scale(1);opacity: 1;transform: scale(1);-webkit-transition: -webkit-transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
+transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;">
+          <div class="sky">
+            <div class="blue"></div>
+          </div>
+          <div class="cont_img">
+            <img src="./images/main-loan.png" alt="전월세보증금 대출 이용화면">
+          </div>
+          <div class="cont_txt">
+            <h3>복잡한 서류 제출을 간편하게, 내가 원하는 시간에</h3>
+            <p>이사 날짜가 주말이나 공휴일이어도 전월세보증금 대출을 신청할 수 있습니다.</p>
+          </div>
+          <div class="cont_btn">
+            <a href="#" class="link_loan" target="self">마이너스 통장대출
+              <img src="./images/home_arr2.png" class="ico_arr" alt="열기">
+            </a>
+            <a href="#" class="link_loan" target="self">신용대출
+              <img src="./images/home_arr2.png" class="ico_arr" alt="열기">
+            </a>
+            <a href="#" class="link_loan" target="self">개인사업자 대출
+              <img src="./images/home_arr2.png" class="ico_arr" alt="열기">
+            </a>
+            <a href="#" class="link_loan" target="self">전월세보증금 대출
+              <img src="./images/home_arr2.png" class="ico_arr" alt="열기">
+            </a>
+          </div>
+          <span class="moon">
+            <span class="moon_original"></span>
+            <span class="moon_show"></span>
+          </span>
+          <span class="ico_star ico_star1 on"></span>
+          <span class="ico_star ico_star2 on"></span>
+          <span class="ico_star ico_star3 on"></span>
+          <span class="ico_star ico_star4 on"></span>
+          <span class="ico_star ico_star5 on"></span>
+          <span class="ico_star ico_star6 on"></span>
+          <span class="ico_star ico_star7 on"></span>
+          <span class="ico_star ico_star8 on"></span>
+        </div>
+
+        <!-- 체크카드 -->
+        <div class="intro_cont cont_checkcard">
+          <div class="cont_btn">
+            <a href="#" class="link_bank" target="self">
+              카카오뱅크 프렌즈 체크카드
+              <img src="./images/home_arr.png" class="ico_arr" alt="열기">
+            </a>
+          </div>
+
+          <div class="cont_img slick-initialized slick-slider">
+            <div id="slides">
+              <div class="screen">
+                <ul class="slides-container">
+                  <li><a href="#"><img src="./images/card-1.png" alt="#" /></a></li>
+                  <li><a href="#"><img src="./images/card-2.png" alt="#" /></a></li>
+                  <li class="on"><a href="#"><img src="./images/card-3.png" alt="#" /></a></li>
+                  <li><a href="#"><img src="./images/card-4.png" alt="#" /></a></li>
+                  <li><a href="#"><img src="./images/card-5.png" alt="#" /></a></li>
+                </ul>
+              </div>
+              <a href="#" class="prev">이전</a>
+              <a href="#" class="next">다음</a>
+            </div>
+          </div>
+
+          <div class="cont_txt">
+            <h3>
+              프렌즈 체크카드, <br />
+              내가 고르는 선택의 즐거움
+            </h3>
+            <p>프렌즈 디자인부터 멋스러운 블랙 컬러 카드까지 원하는 디자인과 기능을 선택할 수 있습니다.</p>
+          </div>
+        </div>
+        <!-- 마무리 -->
+        <div class="intro_cont cont_end">
+          <div class="cont_txt">
+            <h3>IT 기술로 카카오뱅크를<br>
+              만들어 갑니다.</h3>
+          </div>
+          <span class="cont_bar"></span>
+          <span class="cont_bar_bg"></span>
+          <div class="cont_img">
+            <img src="./images/home_it.png" alt="#">
+            <ul>
+              <li>
+                <span>
+                  <img src="./images/img-mweb-ico-1@2x.png" alt="#">
+                </span>
+                <strong>간결하고, 유려하게</strong>
+                <p>
+                  작은 모바일 화면에 적합하도록<br>
+                  복잡함을 덜어낸<br>
+                  유려하고 친화적인 UX
+                </p>
+              </li>
+              <li>
+                <span>
+                  <img src="./images/img-mweb-ico-2@2x.png" alt="#">
+                </span>
+                <strong>간편한 인증, 철저한 보안</strong>
+                <p>
+                  지문, 비밀번호로 간편한 인증<br>
+                  IT 기술의 강력한 보안 검증과<br>
+                  데이터 암호화
+                </p>
+              </li>
+              <li></li>
+              <li>
+                <span>
+                  <img src="./images/img-mweb-ico-3@2x.png" alt="#">
+                </span>
+                <strong>Mobile First, One App</strong>
+                <p>
+                  모바일에서 뱅킹이 더 쉽고 편리하게<br>
+                  여러 앱을 설치할 필요 없이<br>
+                  하나의 앱으로
+                </p>
+              </li>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="to_top">
+      <a href="#">
+        <span>▲</span>
+        TOP
+      </a>
+    </div>
+
+    <footer>
+      <h2 class="sr-only">서비스 이용정보</h2>
+      <div class="inner_foot">
+        <div class="footer_info">
+          <a class="link_service" href="#">모바일뱅킹 서비스 이용약관</a>
+          <span class="txt_bar"></span>
+          <a class="link_service" href="#">전자금융거래 기본약관</a>
+          <span class="txt_bar"></span>
+          <a class="link_service link_bold" href="#">위치기반 서비스 이용약관</a>
+          <span class="txt_bar"></span>
+          <a class="link_service link_bold" href="#">개인정보처리방침</a>
+          <span class="txt_bar"></span>
+          <a class="link_service link_bold" href="#">전자민원접수</a>
+          <span class="txt_bar"></span>
+          <a class="link_service" href="#">보호금융상품등록부</a>
+          <span class="txt_bar"></span>
+          <a class="link_service" href="#">상품공시실</a>
+          <span class="txt_bar"></span>
+          <a class="link_service" href="#">경영공시</a>
+          <span class="txt_bar"></span>
+          <a class="link_service" href="#">공지사항</a>
+        </div>
+        <div class="info_copyright">
+          본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다. <br />
+          &copy; 2021 Jeong, Da-Hee. All Rights Reserved.
+          <strong class="sr-only">카카오뱅크 공식채널 바로가기</strong>
+        </div>
+        <div class="footer_bottom">
+          <div style="width: 180px;">
+            <a href="#" style="display: block;">
+              <img alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" class="img_webaccessibility"
+                src="./images/webaccessibility.png" title="국가 공인 인증기관 : 웹와치">
+              <span>웹 접근성 품질인증</span>
+            </a>
+          </div>
+
+          <ul class="list_channel">
+            <li>
+              <a class="link_channel" href="#" title="새창열림"><span class="img_kabang ico_facebook">페이스북</span></a>
+            </li>
+            <li>
+              <a class="link_channel link_blog" href="#" title="새창열림"><span class="img_kabang ico_blog">블로그</span></a>
+            </li>
+            <li>
+              <a class="link_channel link_naver" href="#" title="새창열림"><span class="img_kabang ico_naver">네이버포스트</span></a>
+            </li>
+            <li>
+              <a class="link_channel" href="#"><span class="img_kabang ico_youtube" title="새창열림">유튜브</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a href="#" class="pcver">pc버전</a>
+    </footer>
+
+  </div>
+</body>
+
+</html>
